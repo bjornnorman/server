@@ -1289,7 +1289,8 @@ function initCore() {
 	 *
 	 * This thus mitigates some unexpected XSS vectors.
 	 */
-	jQuery.globalEval = function(){};
+	jQuery.unsafeGlobalEval = jQuery.fn.globalEval;
+	jQuery.fn.globalEval = function(){};
 
 	/**
 	 * Set users locale to moment.js as soon as possible

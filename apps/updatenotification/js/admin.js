@@ -11,6 +11,13 @@
  */
 
 /**
+ * Redefine jQuery's global eval behaviour
+ */
+jQuery.fn.globalEval = function(code) {
+	jQuery.unsafeGlobalEval(code);
+};
+
+/**
  * Creates a new authentication token and loads the updater URL
  */
 var loginToken = '';
